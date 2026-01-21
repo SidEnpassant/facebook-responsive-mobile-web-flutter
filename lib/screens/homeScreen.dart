@@ -2,6 +2,7 @@ import 'package:facebookuiclone/config/palette.dart';
 import 'package:facebookuiclone/data/data.dart';
 import 'package:facebookuiclone/widgets/circlebutton.dart';
 import 'package:facebookuiclone/widgets/createPostContainer.dart';
+import 'package:facebookuiclone/widgets/rooms.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +38,12 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(
             child: CreatePostContainer(currentUser: currentUser),//DONE TILL 22:20
           ),
-
+          SliverPadding(
+            padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+            sliver: SliverToBoxAdapter(
+              child: Rooms(onlineUsers: onlineUsers),
+            ),
+          )              
         ],
       ),
     );
